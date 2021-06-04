@@ -2,6 +2,11 @@ package com.training.springbootbuyitem.constant;
 
 public class BuyItemConstant {
 
+	/**
+	 * MDC Constants
+	 */
+	public static final String TRACE_ID = "trace-id";
+	public static final String OPERATION = "operation";
 
 	/**
 	 * Entities

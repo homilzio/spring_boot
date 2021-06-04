@@ -59,7 +59,7 @@ public class ItemService implements IItemService {
 	@Override
 	public Item update(Item item) {
 		Item persistedItem = get(item.getItemUid());
-		if (!StringUtils.hasText(item.getName())) {
+		if (StringUtils.hasText(item.getName())) {
 			persistedItem.setName(item.getName());
 		}
 		if (!StringUtils.isEmpty(item.getDescription())) {

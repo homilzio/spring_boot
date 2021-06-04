@@ -11,9 +11,9 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.training.springboot</groupId>
-    <artifactId>item-storage</artifactId>
+    <artifactId>spring-boot-starter</artifactId>
     <version>0.0.1</version>
-    <name>item-storage</name>
+    <name>spring-boot-starter</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -32,6 +32,11 @@
             <version>2.3.0</version>
         </dependency>
         <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-all</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
@@ -42,10 +47,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -78,6 +79,11 @@
             <artifactId>modelmapper</artifactId>
             <version>2.3.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

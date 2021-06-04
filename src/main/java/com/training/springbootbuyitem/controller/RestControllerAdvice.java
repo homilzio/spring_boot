@@ -1,8 +1,12 @@
 package com.training.springbootbuyitem.controller;
 
+import com.training.springbootbuyitem.constant.BuyItemConstant;
 import com.training.springbootbuyitem.entity.response.ErrorMessage;
 import com.training.springbootbuyitem.error.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +19,8 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 @ControllerAdvice
 public class RestControllerAdvice {
 
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(RestControllerAdvice.class);
 	@ExceptionHandler(EntityNotFoundException.class)
 	public ResponseEntity<ErrorMessage> handleNotFoundError(Exception e) {
 		//return buildErrorMessageResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
@@ -40,19 +46,12 @@ public class RestControllerAdvice {
 	}
 
 	private ResponseEntity<ErrorMessage> buildErrorMessageResponseEntity(String msg, HttpStatus httpStatus) {
-		/*
-		log.error(msg);
-		return new ResponseEntity<>(
-				ErrorMessage.builder()
-						.message(msg)
-						.code(httpStatus.value())
-						.traceId(MDC.get(ItemStorageConstant.TRACE_ID))
-						.operation(MDC.get(ItemStorageConstant.OPERATION))
-						.build(),
-				httpStatus);
+		LOGGER.error(msg);
+		LOGGER.info(msg);
+		LOGGER.debug(msg);
+		LOGGER.warn(msg, httpStatus.getReasonPhrase());
 
-		 */
-		throw new NotImplementedException();
+		return new ResponseEntity<ErrorMessage>();
 	}
 
 }
