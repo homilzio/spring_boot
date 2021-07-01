@@ -12,7 +12,7 @@ public class ItemStorageProperties {
 	@Value("${notification.email.send:false}")
 	private boolean sendNotificationEmail;
 
-	@Value("homilzio.santos@celfocus.com")
+	@Value("NB27514@novabase.com")
 	private String sendNotificationEmailUri;
 
 	@Value("notification.email.recipient")

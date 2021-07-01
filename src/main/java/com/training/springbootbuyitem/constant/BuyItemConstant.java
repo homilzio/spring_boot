@@ -21,4 +21,6 @@ public class BuyItemConstant {
 	public static final String LOGGING_HANDLER_OUTBOUND_MSG = "Responded with Status [%s] at [%s]";
 	public static final String LOGGING_HANDLER_PROCESS_TIME_MSG = "Total processing time [%s] ms";
 
+	public static final String TRACE_ID = "Trace-Id";
+	public static final String OPERATION = "Operation";
 }
